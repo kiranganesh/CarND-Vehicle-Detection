@@ -8,7 +8,7 @@ All the code for this project is contained in the `code.py` file.
 
 ## Inspect Data
 
-The code starts off with a quick visual inspection of the data 
+The initial part of the code starts off with a quick visual inspection of the data: 
 
 ![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image1.JPG)
 
