@@ -18,25 +18,25 @@ Some sample data is given below for both vehicle and non-vehicle data. The title
 
 ![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image3.JPG)
 
+I also explored different color spaces and ended up picking YUV color space with orientation of 11, pix_per_cell of 16 and cell_per_block of 2. After multiple trial runs, there were also many other combinations that produced somewhat similar result so I'm not sure that the values I picked were necessarily the most optimal. 
 
-![alt text][image1]
+For initial build of video extraction pipeline, I decided to use only the HOG feature extraction. The color histogram/spatial color info were additional tools I could come back to and rely on if the HOG features did not provide sufficient accuracy by themselves.
 
-I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
+## SVC Classifier
 
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
+The SVC was extremely simple to create and train using the extracted feature data, requiring essentially only 7 lines of code:
 
+`vehicle_features = extract_features(vehicles, cspace=colorspace)
+non_vehicle_features = extract_features(non_vehicles, cspace=colorspace)
+X = np.vstack((vehicle_features, non_vehicle_features)).astype(np.float64)  
+y = np.hstack((np.ones(len(vehicle_features)), np.zeros(len(non_vehicle_features))))
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=50)
+svc = LinearSVC()
+svc.fit(X_train, y_train)`
 
-![alt text][image2]
+The SVC was able to achieve a test data accuracy of 0.9837 for classification. 
 
-####2. Explain how you settled on your final choice of HOG parameters.
-
-I tried various combinations of parameters and...
-
-####3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
-
-I trained a linear SVM using...
-
-###Sliding Window Search
+## Sliding Window Search
 
 ####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
