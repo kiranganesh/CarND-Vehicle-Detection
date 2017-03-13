@@ -1,16 +1,13 @@
 ##Vehicle Detection 
 
-This project detects vehicles in a given video stream of highway data. There are multiple ways to do this; this project focuses on an approach with HOG feature extraction + SVM classifier training. Other possible approaches include deep learning based solutions. 
+This project detects vehicles in a given video stream of highway data. There are multiple ways to do this; this project focuses on an approach with HOG feature extraction + SVM classifier training. The code for this project is contained in the `code.py` file. 
 
+## Inspect Data
 
----
-###Writeup / README
+I started off with a quick visual inspection of the data 
+![image1](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image1.JPG)
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
-
-You're reading it!
-
-###Histogram of Oriented Gradients (HOG)
+## HOG Features
 
 ####1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
