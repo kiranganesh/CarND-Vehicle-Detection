@@ -4,16 +4,19 @@ This project detects vehicles in a given video stream of highway data. There are
 
 ## Inspect Data
 
-I started off with a quick visual inspection of the data 
-![image1](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image1.JPG)
+The code starts off with a quick visual inspection of the data 
+![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image1.JPG)
 
 ## HOG Features
 
-####1. Explain how (and identify where in your code) you extracted HOG features from the training images.
+The HOG features are extracted with the help of the `get_hog_features` function provided in the Udacity lessons. Using some test code to sweep through the various HOG extraction parameeters (orient, pix_per_cell and cells_per_block), I looked at a few different values of the parameters.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
+Some sample data is given below for both vehicle and non-vehicle data. The title (x,y,z) of each picture shows the values of (orient, pix_per_cell and cells_per_block)
 
-I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
+![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image2.JPG)
+
+![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image3.JPG)
+
 
 ![alt text][image1]
 
