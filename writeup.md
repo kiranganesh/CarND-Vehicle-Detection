@@ -26,20 +26,7 @@ For initial build of video extraction pipeline, I decided to use only the HOG fe
 
 The SVC was extremely simple to create and train using the extracted feature data, requiring essentially only 7 lines of code:
 
-`vehicle_features = extract_features(vehicles, cspace=colorspace)
-
-non_vehicle_features = extract_features(non_vehicles, cspace=colorspace)
-
-X = np.vstack((vehicle_features, non_vehicle_features)).astype(np.float64)  
-
-y = np.hstack((np.ones(len(vehicle_features)), np.zeros(len(non_vehicle_features))))
-
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=50)
-
-svc = LinearSVC()
-
-svc.fit(X_train, y_train)`
-
+![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image4.JPG)
 
 The SVC was able to achieve a test data accuracy of 0.9837 for classification. 
 
