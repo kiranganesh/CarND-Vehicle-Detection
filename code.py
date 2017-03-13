@@ -454,8 +454,8 @@ for i, im in enumerate(test_images):
 
 # --- Process Video ---
 
-test_out_file = 'test_video_out.mp4'
-clip_test = VideoFileClip('test_video.mp4')
+test_out_file = 'project_video_out.mp4'
+clip_test = VideoFileClip('project_video.mp4')
 clip_test_out = clip_test.fl_image(process_frame)
 clip_test_out.write_videofile(test_out_file, audio=False)
 
