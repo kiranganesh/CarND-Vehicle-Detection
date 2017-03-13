@@ -32,9 +32,12 @@ The SVC was able to achieve a test data accuracy of 0.9837 for classification.
 
 ## Sliding Window Search
 
-####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
+Using the guidelines from the lessons, I used small scale windows near the middle of the image to capture distant vehicles, and used progressively larger windows while going towards the bottom of the image.
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image5.JPG)
+
+![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image6.JPG)
+
 
 ![alt text][image3]
 
