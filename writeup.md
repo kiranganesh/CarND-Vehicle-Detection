@@ -1,6 +1,10 @@
 ##Vehicle Detection 
 
-This project detects vehicles in a given video stream of highway data. There are multiple ways to do this; this project focuses on an approach with HOG feature extraction + SVM classifier training. The code for this project is contained in the `code.py` file. 
+This project detects vehicles in a given video stream of highway data. 
+
+While there are  multiple ways to do this, this implementation focuses on an approach with HOG feature extraction + SVM classifier training. 
+
+All the code for this project is contained in the `code.py` file. 
 
 ## Inspect Data
 
