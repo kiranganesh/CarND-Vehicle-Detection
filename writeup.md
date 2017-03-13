@@ -46,9 +46,11 @@ The choices of the bounding boxes and scales were mostly a trial and error exper
 
 ## Heatmaps
 
-To reduce false positives, a threholded heatmap based filtering technique is applied that amplifies multiple overlaps of a detected vehicle.
+To reduce false positives, a threholded heatmap based filtering technique is applied.
 
 ![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image8.JPG)
+
+The heatmap helps to reduce false positives through amplification of multiple overlaps of a detected vehicle.
 
 ![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image9.JPG)
 
@@ -66,7 +68,7 @@ https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/test_video_ou
 
 ## Discussion
 
-This project implements a very basic vehicle detection algorithm. 
+This project implements a very basic vehicle detection algorithm. It is really enlightening to see how very simple techniques (HOG, SVC) can be put together to achieve really powerful results (detect a vehicle!). 
 
 The simplest improvement that can be done on this is the implementation of smoothing the resulting output over past frames (so that each frame is not processed completely independently of past detections) This would make the video a whole lot smoother.
 
