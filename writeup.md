@@ -5,6 +5,7 @@ This project detects vehicles in a given video stream of highway data. There are
 ## Inspect Data
 
 The code starts off with a quick visual inspection of the data 
+
 ![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image1.JPG)
 
 ## HOG Features
