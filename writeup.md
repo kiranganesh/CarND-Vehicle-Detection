@@ -32,7 +32,7 @@ The SVC was extremely simple to create and train using the extracted feature dat
 
 ![Image](https://github.com/kiranganesh/CarND-Vehicle-Detection/blob/master/examples/image4.JPG)
 
-The SVC was able to achieve a test data accuracy of 0.9837 for classification. 
+The SVC was able to achieve a test data accuracy of 0.9837 for classification. Using all 3 channels for HOG extraction was very helpful to optimize the SVC fit, as well as choice of YUV color space. Possibly using additional features such as color histogram and spatial features could likely optimize the SVC further. 
 
 ## Sliding Window Search
 
