@@ -35,6 +35,8 @@ The SVC was extremely simple to create and train using the extracted feature dat
 
 The SVC was able to achieve a test data accuracy of 0.9837 for classification. Using all 3 channels for HOG extraction was very helpful to optimize the SVC fit, as well as choice of YUV color space. Possibly using additional features such as color histogram and spatial features could likely optimize the SVC further. 
 
+Note: Code was also added to scale data before fit, but its really needed only when combining different types of features together. If fitting using only the HOG features, the code works with or without the scaling.
+
 ## Sliding Window Search
 
 Using the guidelines from the lessons, I used small scale windows near the middle of the image to capture distant vehicles, and used progressively larger windows while going towards the bottom of the image. 
