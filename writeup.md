@@ -1,4 +1,5 @@
-##Vehicle Detection 
+
+## Vehicle Detection 
 
 This project detects vehicles in a given video stream of highway data. 
 
