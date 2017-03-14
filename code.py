@@ -2,11 +2,12 @@ import numpy as np
 import cv2
 import glob
 
-from skimage.feature import hog
 from sklearn.svm import LinearSVC
 from sklearn.model_selection import train_test_split
-from scipy.ndimage.measurements import label
+from sklearn.preprocessing import StandardScaler
 
+from skimage.feature import hog
+from scipy.ndimage.measurements import label
 from moviepy.editor import VideoFileClip
 
 import matplotlib.image as mpimg
@@ -182,6 +183,11 @@ print('Done')
 # Create an array stack of feature vectors
 X = np.vstack((vehicle_features, non_vehicle_features)).astype(np.float64)  
 
+# scale features prior to making prediction. 
+# needed only if multiple features are mixed together (hog, color histogram, spatial etc)
+# Xscaler = StandardScaler().fit(X)
+# X = Xscaler.transform(X)
+
 # Define the labels vector
 y = np.hstack((np.ones(len(vehicle_features)), np.zeros(len(non_vehicle_features))))
 
@@ -272,7 +278,10 @@ def find_cars(img, ystart, ystop, scale, cspace, hog_channel, svc, X_scaler, ori
 
             xleft = xpos*pix_per_cell
             ytop = ypos*pix_per_cell
-            
+           
+           # scale features prior to making prediction. 
+           # needed only if multiple features are mixed together (hog, color histogram, spatial etc)
+           # hog_features = X_scaler.transform(np.hstack(hog_features.reshape(1, -1))) 
            
             test_prediction = svc.predict(hog_features)
             
